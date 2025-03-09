@@ -1,0 +1,60 @@
+﻿
+@model IEnumerable<u24634400_INF272_Prac2.Models.MyModel>
+@{
+    ViewBag.Title = "StudyGroupView";
+}
+
+<h2>StudyGroupView</h2>
+
+<table class="StudentTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mylink)
+        </th>
+    </tr>
+
+    @foreach (var item in Model) //For each Student
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+
+                <button onclick="window.location.href='@Url.Content(item.mylink)'" style="background-color: green; padding: 10px; color: white; border-radius: 6px; height: 10px;
+                 font-size: 12px; align-items: center;display:flex;text-align:center;justify-content:center" ;>
+                    Link
+                </button>
+
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+        </tr>
+    }
+
+</table>
+
