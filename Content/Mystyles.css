@@ -1,6 +1,6 @@
 ﻿
 body{
-    background-color: white;
+    background-color: ghostwhite;
 }
 
 nav ul {
@@ -132,7 +132,7 @@ img {
     height:100px;
     object-fit: cover; /* Better fit */
     transition: transform 0.3s ease-in-out;
-    margin-bottom: 1000px;
+    margin-top: -20px;
 }
 
     /* Image Flip Effect */
@@ -159,6 +159,9 @@ div.Biography img {
 
 div.Biography {
     overflow: hidden;
+}
+div{
+    background-color: white;
 }
 
 
