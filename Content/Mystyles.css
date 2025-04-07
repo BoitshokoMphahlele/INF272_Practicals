@@ -1,6 +1,6 @@
 ﻿
 body{
-    background-color: ghostwhite;
+    background-color: green;
 }
 
 nav ul {
@@ -9,19 +9,21 @@ nav ul {
     padding: 0;
     overflow:hidden;
     display: flex;
-    background-color: darkslategrey;
+    justify-content:center;
+    gap:15px;
+    background-color: lightgreen;
 }
 
 nav ul li {
       position: relative;
       padding: 10px 15px;
-      
+      display:inline;
 }
 
- nav ul li a {
-       color: white;
-       text-decoration: none;
- }
+    nav ul li a {
+        text-decoration: none;
+        background-color: lightgreen;
+    }
 
  nav ul li a:hover {
        background-color: black;
@@ -51,8 +53,8 @@ nav ul li {
  }
 
 div {
-    border: 2px solid green;
-    margin-top: 10px;
+    
+    margin-top: 15px;
     height: auto;
 }
 
@@ -141,27 +143,37 @@ img:hover {
  }
 
 
-div.Hobbies img {
+div#Hobbies img {
     float: right;
     margin-left: 15px;
-    margin-bottom: 15px;
+    width:80px;
 }
 
-div.Hobbies {
+div#Hobbies {
     overflow:hidden;
 }
 
-div.Biography img {
+div#Biography img {
     float: left;
-    margin-left: 15px;
-    margin-bottom: 15px;
+    
+    width:80px;
+    margin-bottom:100px;
 }
 
-div.Biography {
+div#Biography {
     overflow: hidden;
 }
-div{
-    background-color: white;
+
+.container {
+    max-width: 1200px;
+}
+
+.content-box {
+    background: white;
+    padding: 20px;
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    box-shadow: 2px grey;
 }
 
 

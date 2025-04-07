@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Boitshoko</title>
-    <link href="../Content/Mystyles.css" rel="stylesheet"/>
+    <link href="../Content/Mystyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
     <h1>Boitshoko Mphahlele</h1>
 
-    <nav class="NavBar">
+    <nav class="NavBar bg-white">
         <ul>
             <li id="MAIN"><a href="/Home/Index">Main</a></li>
             <li id="List"><a href="/People/StudyGroupView">List</a></li>
@@ -22,66 +23,74 @@
         </ul>
     </nav>
 
-    <div class="Biography">
+    <div class="container">
+        <div class="row text-center">
 
-        <h3>Biography</h3>
-        <p class="BIO">
-            Boitshoko is from Limpopo at a town called Lebowakgomo<br />
-            He went to school at LEAP Science and Maths School<br />
-            He's currently studying Bcom Informatics taking Business studies as his elective because he's interested in the business world<br />
-        </p>
-        <img class="BioImage" src="Images/tony-stark-iron-man.jpg" alt="Tony" />
+            <div id="Biography" class="col-md-4 content-box">
+
+                <h3>Biography and Background</h3>
+
+                <div class="d-flex">
+                    <img class="BioImage me-2" src="Images/tony-stark-iron-man.jpg" alt="Tony" />
+                    <p class="BIO">
+                        Boitshoko is from Limpopo at a town called Lebowakgomo<br />
+                        He went to school at LEAP Science and Maths School<br />
+                        He's currently studying Bcom Informatics taking Business studies as his elective because he's interested in the business world<br />
+                    </p>
+                </div>
+
+            </div>
 
 
-    </div>
+            <div id="Hobbies" class="col-md-4 content-box">
 
-    <div class="Hobbies">
+                <h3>Hobbies</h3>
 
-        <h3>Hobbies</h3>
+                <p class="Hobby">
+                    Boitshoko plays soccer<br />
+                    He also enjoys playing video games<br />
+                    <img class="float-right m-lg-2 mb-2" src="Images/Football.jpeg" alt="Football" />
+                </p>
 
-        <p class="Hobby">
-            Boitshoko plays soccer<br />
-            He also enjoys playing video games<br />
-            <img class="HobbyIMG" src="Images/Football.jpeg" alt="Football" />
-        </p>
-       
-    </div>
+            </div>
 
-    <div class="Modules">
+            <div id="Modules" class="col-md-4 content-box">
 
-        <h3>Modules</h3>
+                <h3>Modules</h3>
 
-        <table class="Modules">
-            <tr>
-                <th>First Semester Modules</th>
-                <th>Second Semester Modules</th>
-            </tr>
-            <tr>
-                <td>INF 272 </td>
-                <td>INF 272 </td>
-            </tr>
-            <tr>
-                <td>INF 271</td>
-                <td>INF 271</td>
-            </tr>
-            <tr>
-                <td>INF 214</td>
-                <td>INF 264</td>
-            </tr>
-            <tr>
-                <td>BER 210</td>
-                <td>BER 220</td>
-            </tr>
-            <tr>
-                <td>OBS 210</td>
-                <td>OBS 220</td>
-            </tr>
-            <tr>
-                <td>WST 214</td>
-                <td>JCP 201</td>
-            </tr>
-        </table>
+                <table id="Modules" class="table-bordered">
+                    <tr>
+                        <th>First Semester Modules</th>
+                        <th>Second Semester Modules</th>
+                    </tr>
+                    <tr>
+                        <td>INF 272 </td>
+                        <td>INF 272 </td>
+                    </tr>
+                    <tr>
+                        <td>INF 271</td>
+                        <td>INF 271</td>
+                    </tr>
+                    <tr>
+                        <td>INF 214</td>
+                        <td>INF 264</td>
+                    </tr>
+                    <tr>
+                        <td>BER 210</td>
+                        <td>BER 220</td>
+                    </tr>
+                    <tr>
+                        <td>OBS 210</td>
+                        <td>OBS 220</td>
+                    </tr>
+                    <tr>
+                        <td>WST 214</td>
+                        <td>JCP 201</td>
+                    </tr>
+                </table>
 
+            </div>
+        </div>
     </div>
 
 </body>

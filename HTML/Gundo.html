@@ -4,82 +4,80 @@
     <meta charset="utf-8" />
     <title>Gundo</title>
     <link href="../Content/Mystyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-white">
 
-    <h1>Gundo Ndou</h1>
+    <div class="container py-4">
+        <h1 class="text-center mb-4">Gundo Ndou</h1>
 
-    <nav class="NavBar">
-        <ul>
-            <li id="MAIN"><a href="/Home/Index">Main</a></li>
-            <li id="List"><a href="/People/StudyGroupView">List</a></li>
-            <li class="LINKS"><a href="Boitshoko.html">Boitshoko</a></li>
-            <li class="LINKS"><a href="Msizi.html">Msizi</a></li>
-            <li class="LINKS"><a href="Gundo.html">Gundo</a></li>
-            <li class="LINKS"><a href="Ritshidze.html">Ritshidze</a></li>
-            <li class="LINKS"><a href="Nhlanhla.html">Nhlanhla</a></li>
-            <li id="Back"><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
-        </ul>
-    </nav>
+        <nav class="mb-4">
+            <ul class="nav nav-tabs bg-success">
+                <li class="nav-item"><a class="nav-link text-dark" href="/Home/Index">Main</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="/People/StudyGroupView">List</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Boitshoko.html">Boitshoko</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Msizi.html">Msizi</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Gundo.html">Gundo</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Ritshidze.html">Ritshidze</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Nhlanhla.html">Nhlanhla</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+            </ul>
+        </nav>
 
-    <div class="Biography">
+        <h3 class="mb-3">More information on this person</h3>
 
-        <h3>Biography</h3>
-        <p class="BIO">
-            Gundo is from Limpopo at a town called Thohoyandou<br />
-            He went to school at Tshikevha Christian School<br />
-            He's currently studying Bcom Informatics taking Business Accounting as his elective because he enjoys accounting<br />
-        </p>
-        <img class="BioImage" src="Images/antman-and-the-wasp-marvel-4.jpg" alt="ANT MAN"/>
+        <!-- Biography Card -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">Background and biography</div>
+            <div class="card-body d-flex">
+                <img class="me-3" src="Images/antman-and-the-wasp-marvel-4.jpg" width="150" height="150" alt="ANT MAN">
+                <p>
+                    Gundo is from Limpopo at a town called Thohoyandou.<br>
+                    He went to school at Tshikevha Christian School.<br>
+                    He's currently studying Bcom Informatics taking Business Accounting as his elective because he enjoys accounting.<br>
+                </p>
+            </div>
+        </div>
 
-    </div>
+        <!-- Hobbies Card -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">Hobbies</div>
+            <div class="card-body d-flex justify-content-between">
+                <p>Gundo plays video games.<br> He also enjoys watching soccer matches.</p>
+                <img src="Images/Gaming.jpg" width="150" height="150" alt="Gaming">
+            </div>
+        </div>
 
-    <div class="Hobbies">
-
-        <h3>Hobbies</h3>
-
-        <p>
-            Gundo plays video games<br />
-            He also enjoys watching soccer matches<br />
-            <img class="HobbyIMG" src="Images/Gaming.jpg" alt="Gaming" />
-        </p>
-       
-    </div>
-
-    <div class="Modules">
-
-        <h3>Modules</h3>
-
-        <table class="Modules">
-            <tr>
-                <th>First Semester Modules</th>
-                <th>Second Semester Modules</th>
-            </tr>
-            <tr>
-                <td>INF 272 </td>
-                <td>INF 272 </td>
-            </tr>
-            <tr>
-                <td>INF 271</td>
-                <td>INF 271</td>
-            </tr>
-            <tr>
-                <td>INF 214</td>
-                <td>INF 264</td>
-            </tr>
-            <tr>
-                <td>BER 210</td>
-                <td>BER 220</td>
-            </tr>
-            <tr>
-                <td>BAC 210</td>
-                <td>BAC 220</td>
-            </tr>
-            <tr>
-                <td>WST 214</td>
-                <td>JCP 201</td>
-            </tr>
-        </table>
+        <!-- Modules Card -->
+        <div class="card mb-4">
+            <div class="card-header bg-secondary text-white">Modules</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <h6>Semester 1 Modules</h6>
+                        <ul>
+                            <li>INF 272</li>
+                            <li>INF 271</li>
+                            <li>INF 214</li>
+                            <li>BER 210</li>
+                            <li>BAC 210</li>
+                            <li>WST 214</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>Semester 2 Modules</h6>
+                        <ul>
+                            <li>INF 272</li>
+                            <li>INF 271</li>
+                            <li>INF 264</li>
+                            <li>BER 220</li>
+                            <li>BAC 220</li>
+                            <li>JCP 201</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

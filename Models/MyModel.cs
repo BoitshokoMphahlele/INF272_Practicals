@@ -22,5 +22,7 @@ namespace u24634400_INF272_Prac2.Models
 
         [Display(Name = "Link to personal page")]
         public string mylink { get; set; }
+
+        
     }
 }

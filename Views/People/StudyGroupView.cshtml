@@ -6,7 +6,7 @@
 
 <h2>StudyGroupView</h2>
 
-<table class="StudentTable" style="width:80%;">
+<table id="GroupTable" class="table-striped-columns" style="width:80%;">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.StudentNumber)
@@ -23,21 +23,24 @@
         <th>
             @Html.DisplayNameFor(model => model.mylink)
         </th>
+        <th>
+            Delete
+        </th>
     </tr>
 
     @foreach (var item in Model) //For each Student
     {
         <tr>
-            <td>
+            <td id="StuNo">
                 @Html.DisplayFor(modelItem => item.StudentNumber)
             </td>
-            <td>
+            <td id="firstname">
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
-            <td>
+            <td id="LName">
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
-            <td>
+            <td id="Email">
                 @Html.DisplayFor(modelItem => item.EmailAddress)
             </td>
             <td>
@@ -48,9 +51,17 @@
                 </button>
 
             </td>
+            <td>
+                <button class="btn btn-success" style="height: 20px; align-items: center; display: flex; text-align: center; justify-content: center" onclick="deleteRow(this)">Delete</button>
+            </td>
 
         </tr>
     }
 
 </table>
+
+
+
+
+
 
