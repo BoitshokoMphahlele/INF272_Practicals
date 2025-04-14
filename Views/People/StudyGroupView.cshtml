@@ -1,67 +1,118 @@
-﻿
-@model IEnumerable<u24634400_INF272_Prac2.Models.MyModel>
+﻿@model List<u24634400_INF272_Prac2.Models.MyModel>
 @{
-    ViewBag.Title = "StudyGroupView";
+    ViewBag.Title = "People List";
 }
 
-<h2>StudyGroupView</h2>
+<h2>People List</h2>
 
-<table id="GroupTable" class="table-striped-columns" style="width:80%;">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.StudentNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EmailAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mylink)
-        </th>
-        <th>
-            Delete
-        </th>
-    </tr>
+<p>
+    <a class="btn btn-success" href="@Url.Action("CreatePeopleView", "People")">Add New Person</a>
+</p>
 
-    @foreach (var item in Model) //For each Student
-    {
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<!-- Search input for real-time highlighting -->
+<input type="text" id="searchBox" placeholder="Search by first name" class="form-control" style="max-width: 300px; display: inline-block; margin-bottom: 20px;" />
+
+<table id="peopleTable" class="table table-bordered" style="width: 80%;">
+    <thead>
         <tr>
-            <td id="StuNo">
-                @Html.DisplayFor(modelItem => item.StudentNumber)
-            </td>
-            <td id="firstname">
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td id="LName">
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td id="Email">
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-
-                <button onclick="window.location.href='@Url.Content(item.mylink)'" style="background-color: green; padding: 10px; color: white; border-radius: 6px; height: 10px;
-                 font-size: 12px; align-items: center;display:flex;text-align:center;justify-content:center" ;>
-                    Link
-                </button>
-
-            </td>
-            <td>
-                <button class="btn btn-success" style="height: 20px; align-items: center; display: flex; text-align: center; justify-content: center" onclick="deleteRow(this)">Delete</button>
-            </td>
-
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Delete</th>
         </tr>
-    }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentNumber</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.EmailAddress</td>
+                <td>
+                    <button class="btn btn-success" onclick="deleteRow(this)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
 
+<!-- LocalStorage Controls -->
+<div style="margin-top: 20px;">
+    <button class="btn btn-primary" onclick="saveToLocalStorage()">Save to Local Storage</button>
+    <button class="btn btn-warning" onclick="loadFromLocalStorage()">Load from Local Storage</button>
+    <button class="btn btn-danger" onclick="clearLocalStorage()">Clear Local Storage</button>
+</div>
 
+<style>
+    .highlight td{
+        color: red !important;
+        font-weight: bold;
+        transition: color 0.5s ease-in-out;
+    }
+</style>
 
+<script>
+    const highlightTimers = new Map();
 
+    document.getElementById("searchBox").addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase();
+        const rows = document.querySelectorAll("#peopleTable tbody tr");
 
+        rows.forEach(row => {
+            const firstNameCell = row.cells[1];
+            if (!firstNameCell) return;
 
+            const firstName = firstNameCell.textContent.toLowerCase();
+
+            if (searchTerm !== "" && firstName.includes(searchTerm)) {
+                row.classList.add("highlight");
+
+                if (highlightTimers.has(row)) {
+                    clearTimeout(highlightTimers.get(row));
+                }
+
+                const timer = setTimeout(() => {
+                    row.classList.remove("highlight");
+                    highlightTimers.delete(row);
+                }, 3000);
+
+                highlightTimers.set(row, timer);
+            } else {
+                row.classList.remove("highlight");
+            }
+        });
+    });
+
+    function saveToLocalStorage() {
+        const tableBodyHtml = document.querySelector("#peopleTable tbody").innerHTML;
+        localStorage.setItem("peopleTableHtml", tableBodyHtml);
+        alert("Table saved to local storage.");
+    }
+
+    function loadFromLocalStorage() {
+        const savedHtml = localStorage.getItem("peopleTableHtml");
+        if (savedHtml) {
+            document.querySelector("#peopleTable tbody").innerHTML = savedHtml;
+            alert("Table loaded from local storage.");
+        } else {
+            alert("No saved table found in local storage.");
+        }
+    }
+
+    function clearLocalStorage() {
+        localStorage.removeItem("peopleTableHtml");
+        alert("Local storage cleared.");
+    }
+
+    function deleteRow(button) {
+        const row = button.closest("tr");
+        row.remove();
+    }
+</script> 

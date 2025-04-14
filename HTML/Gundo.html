@@ -2,84 +2,180 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Gundo</title>
-    <link href="../Content/Mystyles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #A3C9A8;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-container {
+            padding: 20px;
+        }
+
+        .NavBar ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .NavBar li {
+            display: inline;
+        }
+
+        .NavBar a {
+            text-decoration: none;
+            padding: 6px 12px;
+            background-color: #d4f0d2;
+            border: 1px solid #9bbf95;
+            border-radius: 5px;
+            color: black;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            background-color: #f6fdff;
+        }
+
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            background-color: #f6fdff;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .tab-button.active {
+                background-color: white;
+                border-bottom: 1px solid white;
+            }
+
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: white;
+            border-top: none;
+        }
+
+        .BioImage {
+            float: left;
+            margin-right: 15px;
+            width: 150px;
+            height: auto;
+        }
+
+        .Modules {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .Modules th, .Modules td {
+                padding: 8px;
+                text-align: center;
+                border: 1px solid #ccc;
+            }
+
+        /* Optional: Image float right in hobbies */
+        .HobbyImage {
+            float: right;
+            margin-left: 15px;
+            width: 150px;
+            height: auto;
+        }
+    </style>
 </head>
-<body class="bg-white">
+<body>
+    <div class="main-container">
+        <h1 id="firstHeading">Gundo Ndou</h1>
 
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Gundo Ndou</h1>
-
-        <nav class="mb-4">
-            <ul class="nav nav-tabs bg-success">
-                <li class="nav-item"><a class="nav-link text-dark" href="/Home/Index">Main</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="/People/StudyGroupView">List</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Boitshoko.html">Boitshoko</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Msizi.html">Msizi</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Gundo.html">Gundo</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Ritshidze.html">Ritshidze</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Nhlanhla.html">Nhlanhla</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="#" onclick="window.history.go(-1); return false;">Back</a></li>
+        <nav class="NavBar">
+            <ul>
+                <li id="MAIN"><a href="/Home/Index">Main</a></li>
+                <li id="List"><a href="/People/StudyGroupView">List</a></li>
+                <li class="LINKS"><a href="Boitshoko.html">Boitshoko</a></li>
+                <li class="LINKS"><a href="Msizi.html">Msizi</a></li>
+                <li class="LINKS"><a href="Gundo.html">Gundo</a></li>
+                <li class="LINKS"><a href="Ritshidze.html">Ritshidze</a></li>
+                <li class="LINKS"><a href="Nhlanhla.html">Nhlanhla</a></li>
+                <li id="Back"><a href="#" onclick="window.history.go(-1); return false;">Back</a></li>
             </ul>
         </nav>
 
-        <h3 class="mb-3">More information on this person</h3>
+        <h3>More information on this person</h3>
 
-        <!-- Biography Card -->
-        <div class="card mb-4">
-            <div class="card-header bg-secondary text-white">Background and biography</div>
-            <div class="card-body d-flex">
-                <img class="me-3" src="Images/antman-and-the-wasp-marvel-4.jpg" width="150" height="150" alt="ANT MAN">
-                <p>
-                    Gundo is from Limpopo at a town called Thohoyandou.<br>
-                    He went to school at Tshikevha Christian School.<br>
-                    He's currently studying Bcom Informatics taking Business Accounting as his elective because he enjoys accounting.<br>
-                </p>
-            </div>
+        <div class="tabs">
+            <button class="tab-button" data-tab="tab1">Background and biography</button>
+            <button class="tab-button" data-tab="tab2">Hobbies</button>
+            <button class="tab-button" data-tab="tab3">Modules</button>
         </div>
 
-        <!-- Hobbies Card -->
-        <div class="card mb-4">
-            <div class="card-header bg-secondary text-white">Hobbies</div>
-            <div class="card-body d-flex justify-content-between">
-                <p>Gundo plays video games.<br> He also enjoys watching soccer matches.</p>
-                <img src="Images/Gaming.jpg" width="150" height="150" alt="Gaming">
-            </div>
+        <div id="tab1" class="tab-content">
+            <p class="BIO">
+                <img class="BioImage" src="Images/antman-and-the-wasp-marvel-4.jpg" alt="ANT MAN" />
+                Gundo is from Limpopo at a town called Thohoyandou.<br />
+                He went to school at Tshikevha Christian School.<br />
+                He's currently studying Bcom Informatics taking Business Accounting as his elective because he enjoys accounting.
+            </p>
         </div>
 
-        <!-- Modules Card -->
-        <div class="card mb-4">
-            <div class="card-header bg-secondary text-white">Modules</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h6>Semester 1 Modules</h6>
-                        <ul>
-                            <li>INF 272</li>
-                            <li>INF 271</li>
-                            <li>INF 214</li>
-                            <li>BER 210</li>
-                            <li>BAC 210</li>
-                            <li>WST 214</li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h6>Semester 2 Modules</h6>
-                        <ul>
-                            <li>INF 272</li>
-                            <li>INF 271</li>
-                            <li>INF 264</li>
-                            <li>BER 220</li>
-                            <li>BAC 220</li>
-                            <li>JCP 201</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div id="tab2" class="tab-content" style="display: none;">
+            <p>
+                Gundo plays video games.<br />
+                He also enjoys watching soccer matches.
+            </p>
+            <img class="HobbyImage" src="Images/Gaming.jpg" alt="Gaming">
         </div>
 
+        <div id="tab3" class="tab-content" style="display: none;">
+            <table class="Modules">
+                <tr>
+                    <th>First Semester Modules</th>
+                    <th>Second Semester Modules</th>
+                </tr>
+                <tr><td>INF 272</td><td>INF 272</td></tr>
+                <tr><td>INF 271</td><td>INF 271</td></tr>
+                <tr><td>INF 214</td><td>INF 264</td></tr>
+                <tr><td>BER 210</td><td>BER 220</td></tr>
+                <tr><td>BAC 210</td><td>BAC 220</td></tr>
+                <tr><td>WST 214</td><td>JCP 201</td></tr>
+            </table>
+        </div>
     </div>
 
+    <script>
+        function OpenTab(event) {
+            const allTabs = document.querySelectorAll(".tab-content");
+            const allButtons = document.querySelectorAll(".tab-button");
+
+            allTabs.forEach(tab => tab.style.display = "none");
+            allButtons.forEach(btn => btn.classList.remove("active"));
+
+            const tabId = event.target.dataset.tab;
+            const selectedTab = document.getElementById(tabId);
+
+            if (selectedTab) {
+                selectedTab.style.display = "block";
+                event.target.classList.add("active");
+            }
+        }
+
+        window.onload = () => {
+            const buttons = document.querySelectorAll(".tab-button");
+            buttons.forEach(button => button.addEventListener("click", OpenTab));
+            buttons[0].click(); // Show first tab by default
+        };
+    </script>
 </body>
 </html>

@@ -1,0 +1,40 @@
+﻿@model u24634400_INF272_Prac2.Models.MyModel
+@{
+    ViewBag.Title = "Add Person";
+}
+
+<h2>Add New Person</h2>
+
+@using (Html.BeginForm("CreatePeopleView", "People", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.StudentNumber)
+        @Html.TextBoxFor(m => m.StudentNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.StudentNumber)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmailAddress)
+        @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EmailAddress)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Person</button>
+}
+
+
+

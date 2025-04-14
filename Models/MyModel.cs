@@ -20,9 +20,7 @@ namespace u24634400_INF272_Prac2.Models
         [Display(Name = "Email Address")]
         public string EmailAddress { get; set; }
 
-        [Display(Name = "Link to personal page")]
-        public string mylink { get; set; }
-
+        
         
     }
 }
