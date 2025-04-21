@@ -5,7 +5,7 @@
 
 <h2>Add New Person</h2>
 
-@using (Html.BeginForm("CreatePeopleView", "People", FormMethod.Post))
+@Html.BeginForm("CreatePeopleView", "People", FormMethod.Post)
 {
     @Html.AntiForgeryToken()
 
